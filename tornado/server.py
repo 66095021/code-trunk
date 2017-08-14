@@ -19,6 +19,10 @@ class MainHandler(tornado.web.RequestHandler):
         payload = self.request.body
         self.write(payload)
 
+    def get(self):
+        payload = self.get_query_argument('test')
+        self.write(payload)
+
 
 def main():
     tornado.options.parse_command_line()
